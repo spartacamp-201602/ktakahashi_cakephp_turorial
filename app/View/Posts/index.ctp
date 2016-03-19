@@ -1,6 +1,13 @@
 <h2>Blog Posts</h2>
 <?php //debug($posts) ?>
 
+<!-- <div Align="right"> -->
+<?= $this->Html->link('新規記事投稿',
+                       array(
+                      'controller' => 'posts',
+                      'action' => 'add'
+                       )); ?>
+<!-- </div> -->
 <table>
     <tr>
         <th>Id</th>
