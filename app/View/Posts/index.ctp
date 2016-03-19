@@ -6,6 +6,7 @@
         <th>Id</th>
         <th>タイトル</th>
         <th>本文</th>
+        <th>操作</th>
         <th>投稿日</th>
     </tr>
     <?php foreach ($posts as $post) :?>
@@ -19,9 +20,15 @@
                 'action' => 'show',
                 $post['Post']['id']
             )) ?>
-        <!-- <?= h($post['Post']['title']) ?> -->
         </td>
         <td><?= h($post['Post']['body']) ?></td>
+        <td>
+            <?= $this->Form->postLink(
+                    '削除',
+                    array('action' => 'delete', $post['Post']['id']),
+                    array('confirm' => '削除してよろしいですか？')
+                ); ?>
+        </td>
         <td><?= h($post['Post']['created']) ?></td>
     </tr>
     <?php endforeach ?>
