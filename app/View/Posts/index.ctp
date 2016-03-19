@@ -13,16 +13,23 @@
     <tr>
         <td><?= h($post['Post']['id']) ?></td>
         <td>
-        <?= $this->Html->link(
-            $post['Post']['title'],
-            array(
-                'controller' => 'posts',
-                'action' => 'show',
-                $post['Post']['id']
-            )) ?>
+            <?= $this->Html->link(
+                $post['Post']['title'],
+                array(
+                    'controller' => 'posts',
+                    'action' => 'show',
+                    $post['Post']['id']
+                )) ?>
         </td>
         <td><?= h($post['Post']['body']) ?></td>
         <td>
+            <?= $this->Html->Link(
+                    '編集',
+                    array(
+                         'controller' => 'posts',
+                         'action' => 'edit',
+                         $post['Post']['id']
+                )); ?>
             <?= $this->Form->postLink(
                     '削除',
                     array('action' => 'delete', $post['Post']['id']),
